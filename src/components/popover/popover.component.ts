@@ -20,7 +20,7 @@ import {
   selector: 'app-popover',
   standalone: true,
   imports: [NgTemplateOutlet],
-  styleUrl: './popover.component.css',
+  styleUrl: './popover.component.scss',
   template: `
   <div class="smx-popover">
   <div class="smx-popover-toggle" type="button" #toggle>

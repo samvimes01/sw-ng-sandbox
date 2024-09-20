@@ -1,12 +1,12 @@
-import { Component, input, model } from '@angular/core';
+import { Component, model } from '@angular/core';
 
 @Component({
-  selector: 'app-awesome',
+  selector: 'app-sig-input',
   standalone: true,
   template: `
     <h3>Counter: {{ counter() }}</h3>
   `,
 })
-export class AppAwesome {
+export class SignalInputAwesome {
   counter = model.required();
 }

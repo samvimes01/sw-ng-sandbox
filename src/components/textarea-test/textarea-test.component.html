@@ -1,0 +1,50 @@
+<div class="cols">
+<div class="form-field">
+  <label for="ta">Just textarea</label>
+  <textarea id="ta" rows="3"></textarea>
+</div>
+<div class="form-field">
+  <label for="tacdk">Textarea with cdk autoresize</label>
+  <textarea
+    id="tacdk"
+    style="resize: none"
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+  >
+  </textarea>
+</div>
+</div>
+<br />
+<hr />
+<div class="cols">
+<div class="form-field">
+  <label for="aucus">Autocomplete custom resize</label>
+  <ui-autocomplete
+    [isMultiline]="true"
+    [data]="hazard()"
+    inputId="aucus"
+    name="aucus"
+    [(ngModel)]="selectedHazard1"
+    [required]="true"
+    maxlength="1000"
+    pattern="^[^\s][\w\s\S]*$"
+  />
+</div>
+<div class="form-field">
+  <label for="aucus">Autocomplete cdk resize</label>
+  <ui-autocomplete-cdk
+    [isMultiline]="true"
+    [data]="hazard()"
+    inputId="aucdk"
+    name="aucdk"
+    [(ngModel)]="selectedHazard2"
+    [required]="true"
+    maxlength="1000"
+    pattern="^[^\s][\w\s\S]*$"
+  />
+</div>
+</div>
+<br />
+<hr />
+<div>Selected1: {{ selectedHazard1() }}</div>
+<div>Selected2: {{ selectedHazard2() }}</div>

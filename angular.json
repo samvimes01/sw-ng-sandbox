@@ -33,6 +33,7 @@
             "polyfills": ["zone.js"],
             "scripts": [],
             "styles": ["src/global_styles.css"],
+            "inlineStyleLanguage": "scss",
             "tsConfig": "tsconfig.app.json"
           }
         },

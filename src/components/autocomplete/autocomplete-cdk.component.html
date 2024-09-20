@@ -1,0 +1,86 @@
+<div
+  class="ui-autocomplete-container"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  [attr.aria-expanded]="isOpen()"
+  [class.active]="isOpen()">
+  @let holdertext = placeholder();
+  @let id = inputId();
+  @let maxlen = maxlength();
+  @let disable = disabled();
+  <div class="input-container">
+    @if (isMultiline()) {
+      <textarea
+        #searchInput
+        cdkTextAreaAutoSize
+        type="text"
+        [attr.aria-label]="holdertext"
+        aria-autocomplete="list"
+        role="combobox"
+        style="resize: none;"
+        [placeholder]="holdertext"
+        [(ngModel)]="value"
+        (focus)="handleFocus($event)"
+        (blur)="onTouched($event)"
+        [disabled]="disable"
+        [maxlength]="maxlen"
+        [id]="id || uid"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        autocomplete="off"></textarea>
+    } @else {
+      <input
+        #searchInput
+        type="text"
+        [attr.aria-label]="holdertext"
+        aria-autocomplete="list"
+        role="combobox"
+        [placeholder]="holdertext"
+        [(ngModel)]="value"
+        (focus)="handleFocus($event)"
+        (blur)="onTouched($event)"
+        [disabled]="disable"
+        [maxlength]="maxlen"
+        [pattern]="pattern()"
+        [id]="id || uid"
+        autocomplete="off" />
+    }
+    @if (showClearBtn() && value() && !disabled()) {
+      <div class="x" (click)="remove($event)">
+        <i class="material-icons" aria-label="Close">×</i>
+      </div>
+    }
+  </div>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  (overlayOutsideClick)="isOpen.set(false)"
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen()">
+  <div class="suggestions-container" role="listbox" [style.width.px]="searchInputWidth()">
+    @if (notFound()) {
+      @let tpl = notFoundTemplate();
+      @if (tpl) {
+        <div class="not-found">
+          <ng-container *ngTemplateOutlet="tpl" />
+        </div>
+      } @else {
+        <div class="suggestion-item">Not found</div>
+      }
+    } @else {
+      <ul #filteredListElement>
+        @let toHighlight = value();
+        @for (item of filteredList(); let idx = $index; track item) {
+          <li class="item">
+            <div
+              class="suggestion-item"
+              [class.complete-selected]="idx === selectedIdx()"
+              (click)="select(item)"
+              [innerHTML]="(item | highlight: toHighlight : 'label').label"></div>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</ng-template>

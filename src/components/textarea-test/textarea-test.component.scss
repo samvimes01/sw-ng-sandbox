@@ -1,0 +1,16 @@
+label {
+  font-weight: 700;
+  flex-basis: 200px;
+}
+
+.form-field {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.cols {
+  display:flex;
+  justify-content: space-between;
+}
