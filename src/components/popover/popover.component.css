@@ -1,0 +1,14 @@
+.smx-popover-toggle {
+  width: fit-content;
+}
+.smx-popover-content {
+  display: none;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+  padding: 4px;
+}
