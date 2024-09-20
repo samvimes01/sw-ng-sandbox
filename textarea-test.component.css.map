@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/components/textarea-test/textarea-test.component.scss"],
+  "sourcesContent": ["label {\n  font-weight: 700;\n  flex-basis: 200px;\n}\n\n.form-field {\n  display: flex;\n  gap: 1rem;\n  justify-content: start;\n  align-items: flex-start;\n}\n\n.cols {\n  display:flex;\n  justify-content: space-between;\n}"],
+  "mappings": ";AAAA;AACE,eAAA;AACA,cAAA;;AAGF,CAAA;AACE,WAAA;AACA,OAAA;AACA,mBAAA;AACA,eAAA;;AAGF,CAAA;AACE,WAAA;AACA,mBAAA;;",
+  "names": []
+}

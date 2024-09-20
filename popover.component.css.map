@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/components/popover/popover.component.scss"],
+  "sourcesContent": [".smx-popover-toggle {\n  width: fit-content;\n}\n.smx-popover-content {\n  display: none;\n  width: max-content;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: #222;\n  color: white;\n  border-radius: 4px;\n  padding: 4px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;;AAEF,CAAA;AACE,WAAA;AACA,SAAA;AACA,YAAA;AACA,OAAA;AACA,QAAA;AACA,cAAA;AACA,SAAA;AACA,iBAAA;AACA,WAAA;;",
+  "names": []
+}
